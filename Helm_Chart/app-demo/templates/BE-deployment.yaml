@@ -14,6 +14,8 @@ spec:
     metadata:
       labels:
         app: {{ .Values.backEnd.name }}
+      annotations:
+{{ toYaml .Values.backEnd.annotations | indent 8 }}
     spec:
       containers:
         - name: {{ .Values.backEnd.name }}
