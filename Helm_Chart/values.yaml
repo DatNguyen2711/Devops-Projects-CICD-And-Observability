@@ -1,8 +1,11 @@
-namespace: default
+namespace: myapp
 
 backEnd:
-  replicaCount: 1
+  replicaCount: 2
   name: back-end
+  annotations:
+    sidecar.opentelemetry.io/inject: "true" 
+    instrumentation.opentelemetry.io/inject-dotnet: "true"
   image:
     repository: datnd2711/pharmacy-be
     tag: prod-0.104
@@ -11,9 +14,9 @@ backEnd:
     name: my-dockerhub-secret
   service:
     name: back-end-service
-    type: ClusterIP
+    type: ClusterIP 
     port: 8080
-    targetPort: "http-backend" # Tên cổng cụ thể
+    targetPort: "http-backend"
   resources:
     requests:
       cpu: "250m"
@@ -22,8 +25,9 @@ backEnd:
       cpu: "500m"
       memory: "512Mi"
 
+
 frontEnd:
-  replicaCount: 1
+  replicaCount: 2
   name: front-end
   image:
     repository: datnd2711/pharmacy-fe
@@ -75,14 +79,6 @@ sqlserver:
 ingress:
   name: pharmacy-ingress
   annotations:
-    # nginx.ingress.kubernetes.io/proxy-body-size: 1024m
-    # nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
-    # nginx.ingress.kubernetes.io/proxy-buffers-number: 4
-    # nginx.ingress.kubernetes.io/proxy-buffering: on
-    # nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0  
-
-    # cert-manager.io/cluster-issuer: "ca-issuer"
-    # kubernetes.io/ingress.class: "nginx"
   ingressClassName: nginx
     # tls:
     # - hosts:
@@ -136,5 +132,5 @@ resourceQuota:
   cpuLimits: "3"
   memoryLimits: "5Gi"
 
-service:
-  port: "8080"
+
+
