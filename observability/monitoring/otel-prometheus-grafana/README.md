@@ -72,11 +72,11 @@ helm -n monitoring install prometheus-grafana-stack -f values.yaml kube-promethe
 
 ![alt text](image-8.png)
 
-![image](https://github.com/user-attachments/assets/96d65aff-dd09-44cb-9d5b-0282a8d8ea59)
+![image](https://github.com/user-attachments/assets/ebe6613a-5a05-4ea8-be3f-9615c2236837)
 
-![image](https://github.com/user-attachments/assets/e447d3d2-8804-42e2-bbf1-2a32caea1ac8)
+![image](https://github.com/user-attachments/assets/0f9e7013-2b87-4a23-802f-6689c4cfa275)
 
-![image](https://github.com/user-attachments/assets/e7452268-0a6a-4a96-8576-23d7c3540087)
+![image](https://github.com/user-attachments/assets/5983a573-444a-4e4f-8708-ae017be29151)
 
 
 ## Method 2: using Opentelemetry Auto-instrumentation
