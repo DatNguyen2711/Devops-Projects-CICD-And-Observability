@@ -72,6 +72,9 @@ helm -n monitoring install prometheus-grafana-stack -f values.yaml kube-promethe
 
 ![alt text](image-8.png)
 
+
+## 📊 Last result 
+
 ![image](https://github.com/user-attachments/assets/ebe6613a-5a05-4ea8-be3f-9615c2236837)
 
 ![image](https://github.com/user-attachments/assets/0f9e7013-2b87-4a23-802f-6689c4cfa275)
@@ -185,7 +188,7 @@ helm install otel-collector -n monitoring  opentelemetry-collector/  -f values.y
 
 - To monitoring Dotnet application, to just to add theese annotations into your deployments, daemonset,...
 
-```bash 
+```c++ 
 backEnd:
   replicaCount: 1
   name: back-end
